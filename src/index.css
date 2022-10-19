@@ -1,13 +1,31 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .sidebar-icon {
+    @apply relative dark:bg-gray-800 bg-gray-400 rounded-3xl w-12 h-12 my-2 mx-auto grid place-content-center duration-300 ease-linear cursor-pointer text-emerald-500 hover:rounded-xl hover:bg-emerald-500 hover:text-white;
+  }
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left
+  }
+  .sidebar {
+    @apply fixed top-0 left-0 w-16 h-screen bg-white dark:bg-gray-900 flex flex-col items-center m-0 shadow-md
+  }
+
+  .user-img {
+    @apply  self-start flex-shrink ;
+    flex-basis: 18%;
+  }
+  
+}
+
+.user-text {
+  flex: 1 1 79%;  
 }
